@@ -1,20 +1,20 @@
-# リポジトリのクローン演習
+# リポジトリのフォーク＆クローン演習
 
-この演習では、このリポジトリ (ict4e-hara/forktrial) をあなたのPCにクローンして、基本的な操作（ブランチ作成、コミット、プッシュ、Pull Request 作成）を行う手順を学びます。
+この演習では、このリポジトリ (ict4e-hara/forktrial) をあなたのPCにフォーク＆クローンして、基本的な操作（ブランチ作成、コミット、プッシュ、Pull Request 作成）を行う手順を学びます。
 
 ---
 
 ## 前提
 - Git がインストールされていること（バージョン確認: `git --version`）
-- GitHub アカウントを持っていること（演習で Fork を使う場合）
+- GitHub アカウントを持っていること
 - SSH の設定を使う場合は SSH 鍵を GitHub に登録していること
 
 ---
 
-## 1. リポジトリをフォーク（任意だが推奨）
+## 1. リポジトリをフォーク
 授業や研修で配布リポジトリを自分のアカウントにコピーするため、右上の "Fork" ボタンを押して自分の GitHub アカウントへフォークします。
 
-（直接クローンしても演習はできますが、PR を送る練習をするならフォークしてください）
+（直接クローンしても演習はできますが、PR を送る練習をするためにフォークしてください）
 
 ---
 
@@ -30,7 +30,7 @@ git clone https://github.com/<あなたのユーザ名>/forktrial.git
 cd forktrial
 ```
 
-代わりに、元リポジトリをクローンする場合は URL を https://github.com/ict4e-hara/forktrial.git に置き換えてください。
+※代わりに、元リポジトリをクローンする場合は URL を https://github.com/ict4e-hara/forktrial.git に置き換えてください。
 
 ---
 
@@ -46,7 +46,7 @@ git clone git@github.com:<あなたのユーザ名>/forktrial.git
 cd forktrial
 ```
 
-または元リポジトリを直接クローンするには git@github.com:ict4e-hara/forktrial.git を使用します。
+※または元リポジトリを直接クローンするには git@github.com:ict4e-hara/forktrial.git を使用します。
 
 ---
 

@@ -7,21 +7,30 @@
 ## 前提
 - Git がインストールされていること（バージョン確認: `git --version`）
 - GitHub アカウントを持っていること
+- SourceTreeを使う場合、GitHubアカウントがSourceTreeに登録済みであること
 - SSH の設定を使う場合は SSH 鍵を GitHub に登録していること
 
 ---
 
 ## 1. リポジトリをフォーク
-授業や研修で配布リポジトリを自分のアカウントにコピーするため、右上の "Fork" ボタンを押して自分の GitHub アカウントへフォークします。
+研修で配布リポジトリを自分のアカウントにコピーするため、右上の "Fork" ボタンを押して自分の GitHub アカウントへフォークします。
 
 （直接クローンしても演習はできますが、PR を送る練習をするためにフォークしてください）
 
 ---
 
-## 2. クローン（HTTPS）
+## 2. クローン（Sourcetree）　※推奨
+Sourcetree を使う場合の手順:
+
+1. Sourcetree の リポジトリブラウザ を表示
+2. 「リモート」ボタンを押して、あなたの GitHub アカウント配下に、Forkした forktrial リポジトリが表示
+3. 隣にある「クローン」リンクを押して、必要情報を入力
+
+
+## 3-1. クローン（HTTPS + コマンド）
 HTTPS を使う場合の手順:
 
-1. フォークしたリポジトリ（または元のリポジトリ）ページで "Code" ボタンを押し、"HTTPS" の URL をコピー。
+1. フォークしたリポジトリページで "Code" ボタンを押し、"HTTPS" の URL をコピー。
 2. ターミナルでクローンするディレクトリに移動して次を実行:
 
 ```bash
@@ -30,14 +39,14 @@ git clone https://github.com/<あなたのユーザ名>/forktrial.git
 cd forktrial
 ```
 
-※代わりに、元リポジトリをクローンする場合は URL を https://github.com/ict4e-hara/forktrial.git に置き換えてください。
+※または元リポジトリを直接クローンするには  https://github.com/ict4e-hara/forktrial.git を使用します。
 
 ---
 
-## 3. クローン（SSH）
+## 3-2. クローン（SSH + コマンド）
 SSH を使う場合の手順:
 
-1. GitHub に SSH 鍵を登録済みであることを確認します（https://github.com/settings/keys）。
+1. GitHub に SSH 鍵を登録済みであることを確認します（ https://github.com/settings/keys ）。
 2. リポジトリの "Code" で SSH の URL をコピーし、次を実行:
 
 ```bash
@@ -52,6 +61,15 @@ cd forktrial
 
 ## 4. リモートの確認
 クローン後、どのリモートが設定されているか確認します:
+
+### GUI手順
+
+```bash
+forktraial の ウィンドウを開く
+設定 > 「リモート」タブを確認
+```
+
+### コマンド手順
 
 ```bash
 git remote -v
@@ -78,22 +96,22 @@ git remote -v
 1. ブランチを作る
 
 ```bash
-git checkout -b feature/add-your-name
+git checkout -b feature/<あなたの名前>-intro
 ```
 
-2. ファイルを作成/編集（例: exercises/your-name.md に自己紹介を書く）
+2. ファイルを作成/編集（例: exercises/ws3-your-name.md に自己紹介を書く）
 
 3. 変更をステージしてコミット
 
 ```bash
-git add exercises/your-name.md
-git commit -m "feat: add your-name exercise file"
+git add exercises/<あなたの名前>-intro.md
+git commit -m "Add: your-name exercise file"
 ```
 
 4. リモートへプッシュ
 
 ```bash
-git push origin feature/add-your-name
+git push origin feature/<あなたの名前>-intro
 ```
 
 5. GitHub 上で Pull Request を作成してマージの流れを体験
@@ -113,13 +131,6 @@ git fetch upstream
 git merge upstream/main
 ```
 
-- main を最新にする（rebase、上級者向け）:
-
-```bash
-git checkout feature/add-your-name
-git fetch upstream
-git rebase upstream/main
-```
 
 ---
 
@@ -131,9 +142,9 @@ git rebase upstream/main
 ---
 
 ## 8. 演習タスク（提出まで）
-1. このリポジトリをフォークしてクローンする（または直接クローン）
+1. このリポジトリをフォークしてクローンする
 2. `feature/<あなたの名前>-intro` ブランチを作成
-3. `exercises/<your-github-username>.md` を作成し、名前・所属・今日の学びなどを記載
+3. `exercises/<あなたの名前>-intro.md` を作成し、名前・所属・今日の学びなどを記載
 4. コミットしてプッシュ、PR を作成してレビュー／マージを体験
 
 ---
